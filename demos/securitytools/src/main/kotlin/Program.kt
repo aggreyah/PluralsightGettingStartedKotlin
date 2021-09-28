@@ -2,9 +2,13 @@ import com.aggreyah.Providers
 import java.security.Security
 
 fun main(args: Array<String>) {
-//    val providers = Providers()
-    getAllProviders{ key, value ->
-        println("\t --- $key: $value")
+    val providers = Providers()
+    val details = providers.getAllProviders()
+//    getAllProviders{ key, value ->
+//        println("\t --- $key: $value")
+//    }
+    details.forEach{
+        it -> println("${it.providerName}, ${it.name}")
     }
 }
 
